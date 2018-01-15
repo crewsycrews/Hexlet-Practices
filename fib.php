@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Solution;
+
+// BEGIN (write your solution here)
+function fib($number)
+{
+    if($number<0)
+    {
+        return null;
+    }
+    elseif($number==0)
+    {
+        return 0;
+    }
+    elseif($number==1)
+    {
+        return 1;
+    }
+    $arr=[];
+    $arr[0]=0;
+    $arr[1]=1;
+    for($i=2;$i<=$number;$i++)
+    {
+    $arr[$i]=$arr[$i-1]+ $arr[$i-2];
+    }
+    return end($arr);
+    //$arr[$number]=$arr[$number-1] + $arr[$number-2];
+}
+// END
+print_r(fib(3));
