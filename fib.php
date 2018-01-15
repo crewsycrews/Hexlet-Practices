@@ -1,4 +1,7 @@
 <?php
+// fib.php
+// crewsycrews
+// Реализуйте функцию fib находящую числа Фибоначчи. Аргументом функции является порядковый номер числа.
 
 namespace App\Solution;
 
@@ -25,7 +28,5 @@ function fib($number)
     $arr[$i]=$arr[$i-1]+ $arr[$i-2];
     }
     return end($arr);
-    //$arr[$number]=$arr[$number-1] + $arr[$number-2];
 }
 // END
-print_r(fib(3));

@@ -1,4 +1,8 @@
 <?php
+// binarySum.php
+// crewsycrews
+// Реализуйте функцию binarySum, которая складывает переданные бинарные числа (как строки):
+
 
 namespace App\Solution;
 
@@ -7,8 +11,6 @@ function binarySum($bin1,$bin2)
 {
     $str1 = str_split($bin1);
     $str2 = str_split($bin2);
-    var_dump(count($str1)>count($str2));
-    var_dump(count($str1)<count($str2));
     if(count($str1)>count($str2))
     {
         $len = count($str1);
@@ -17,7 +19,6 @@ function binarySum($bin1,$bin2)
         {
             array_unshift($str2, '0');
         }
-        var_dump($str2);
     }
     elseif(count($str2)>count($str1))
     {
@@ -34,18 +35,8 @@ function binarySum($bin1,$bin2)
     }
     $result = [];
     $temp = 0;
-    var_dump($len);
     for($i=$len-1;$i>=0;$i--)
     {
-            // var_dump($str1[$i]);
-            // var_dump($str2[$i]);
-            // var_dump($str1[$i]+$str2[$i]);
-            // var_dump($temp == 0 && $str1[$i]+$str2[$i]>1);
-            // var_dump($temp == 0 && $str1[$i]+$str2[$i]==1);
-            // var_dump($temp == 0 && $str1[$i]+$str2[$i]<1); 
-            // var_dump($temp == 1 && $str1[$i]+$str2[$i]>1);
-            // var_dump($temp == 1 && $str1[$i]+$str2[$i]==1);
-            // var_dump($temp == 1 && $str1[$i]+$str2[$i]<1);
             if($temp == 0 && $str1[$i]+$str2[$i]>1)
             {
                 $temp = 1;
@@ -82,5 +73,4 @@ function binarySum($bin1,$bin2)
     }
     return $result;
 }
-print_r(binarySum('1101', '101'));
 // END
