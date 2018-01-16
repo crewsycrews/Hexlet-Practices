@@ -16,6 +16,6 @@ function hammingWeight($number)
         if ($bin[$i]==1)
         $result++;
     }
-    return $result;
+    return  $result;
 }
 // END
