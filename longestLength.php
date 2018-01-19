@@ -5,14 +5,43 @@ namespace App\Solution;
 function longestLength($str)
 {
     // BEGIN (write your solution here)
-    $alphabet=[];
-    for($i='a';$i<='z';$i++)
+    $result=0;
+    $temp='';
+    $temp1=0;
+    $t = true;
+    for($i=0;$i<=strlen($str)-1;$i++)
     {
-        $alphabet[]=$i;
+        var_dump($temp);
+        //var_dump($str[$i]);
+        var_dump(strrpos(strrev($temp),$str[$i]));
+        if((strrpos($temp,$str[$i]))!==false)
+        {
+            $t = false;
+            var_dump($i);
+            $i=$i-(strrpos(strrev($temp),$str[$i]));
+            var_dump($i);
+        }
+        if(isset($str[$i+1]) && $t==true)
+        {
+            $temp=$temp . $str[$i];
+            $temp1++;            
+        }
+        elseif($temp1>=$result)
+        {
+            if($t==true)
+            {
+                $temp1++;
+            }
+            $result=$temp1;
+            $temp1=0;
+            $temp='';
+            $t = true;
+            $i=$i-1;
+            
+        }
+
     }
-    $str=str_split($str);
-    $result=array_intersect($alphabet,$str);
     return $result;
     // END
 }
-print_r(longestLength("abcddaslker"));
+print_r(longestLength("jalbcdjel"));
