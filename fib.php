@@ -12,13 +12,9 @@ function fib($number)
     {
         return null;
     }
-    elseif($number==0)
+    elseif($number<2)
     {
-        return 0;
-    }
-    elseif($number==1)
-    {
-        return 1;
+        return $number;
     }
     $arr=[];
     $arr[0]=0;
