@@ -14,6 +14,10 @@ function longestLength($str)
         var_dump($temp);
         //var_dump($str[$i]);
         var_dump(strrpos(strrev($temp),$str[$i]));
+        if($i==strlen($str)-1 && $t==true)
+        {
+            $temp1++;
+        }
         if((strrpos($temp,$str[$i]))!==false)
         {
             $t = false;
@@ -28,16 +32,11 @@ function longestLength($str)
         }
         elseif($temp1>=$result)
         {
-            if($t==true)
-            {
-                $temp1++;
-            }
             $result=$temp1;
             $temp1=0;
             $temp='';
             $t = true;
             $i=$i-1;
-            
         }
 
     }
