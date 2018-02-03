@@ -9,29 +9,23 @@ function longestLength($str)
     $temp='';
     $temp1=0;
     $t = true;
-    for($i=0;$i<=strlen($str)-1;$i++)
-    {
+    for ($i=0;$i<=strlen($str)-1;$i++) {
         var_dump($temp);
         //var_dump($str[$i]);
-        var_dump(strrpos(strrev($temp),$str[$i]));
-        if($i==strlen($str)-1 && $t==true)
-        {
+        var_dump(strrpos(strrev($temp), $str[$i]));
+        if ($i==strlen($str)-1 && $t==true) {
             $temp1++;
         }
-        if((strrpos($temp,$str[$i]))!==false)
-        {
+        if ((strrpos($temp, $str[$i]))!==false) {
             $t = false;
             var_dump($i);
-            $i=$i-(strrpos(strrev($temp),$str[$i]));
+            $i=$i-(strrpos(strrev($temp), $str[$i]));
             var_dump($i);
         }
-        if(isset($str[$i+1]) && $t==true)
-        {
+        if (isset($str[$i+1]) && $t==true) {
             $temp=$temp . $str[$i];
             $temp1++;            
-        }
-        elseif($temp1>=$result)
-        {
+        } elseif ($temp1>=$result) {
             $result=$temp1;
             $temp1=0;
             $temp='';
