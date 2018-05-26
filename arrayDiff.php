@@ -11,6 +11,7 @@
  * PHP version 7
  * 
  * @author crewsycrews <crewsycrews@yandex.ru>
+ * @link   https://github.com/crewsycrews/Hexlet-Practices
  */
 
 namespace App\Arrays;
